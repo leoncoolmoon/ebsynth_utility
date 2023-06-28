@@ -12,7 +12,7 @@ from extensions.ebsynth_utility.stage5 import ebsynth_utility_stage5
 from extensions.ebsynth_utility.stage7 import ebsynth_utility_stage7
 from extensions.ebsynth_utility.stage8 import ebsynth_utility_stage8
 from extensions.ebsynth_utility.stage3_5 import ebsynth_utility_stage3_5
-
+from extensions.ebsynth_utility.ebsynth_Check import eysynth_check
 
 def x_ceiling(value, step):
   return -(-value // step) * step
@@ -163,12 +163,13 @@ def ebsynth_utility_process(stage_index: int, project_dir:str, original_movie_pa
         dbg.print("stage 6")
         dbg.print("")
         dbg.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        dbg.print("Running ebsynth.(on your self)")
+        dbg.print("Running ebsynth.")
         dbg.print("Open the generated .ebs under %s and press [Run All] button."%(project_dir))
         dbg.print("If ""out-*"" directory already exists in the %s, delete it manually before executing."%(project_dir))
         dbg.print("If multiple .ebs files are generated, run them all.")
-        dbg.print("(I recommend associating the .ebs file with EbSynth.exe.)")
+        dbg.print("(Need to associating the .ebs file with EbSynth.exe.)")
         dbg.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        eysynth_check(dbg, project_dir)
         return process_end( dbg, "" )
     elif stage_index == 7:
         ebsynth_utility_stage7(dbg, project_args, blend_rate, export_type, is_invert_mask)
