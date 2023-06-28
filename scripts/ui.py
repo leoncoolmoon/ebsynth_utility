@@ -115,7 +115,7 @@ def on_ui_tabs():
                                                     and upscale to the size of the original video.<br><br>\
                                                 <b>stage 5</b> <br>\
                                                     Rename keyframes.<br>\
-                                                    Generate .ebs file.(ebsynth project file)<br><br>\
+                                                    Generate .ebs file. You need to associate ebs file with ebsynth program (ebsynth project file)<br><br>\
                                                 <b>stage 6</b> <br>\
                                                     Running ebsynth.(on your self)<br>\
                                                     Open the generated .ebs under project directory and press [Run All] button. <br>\
