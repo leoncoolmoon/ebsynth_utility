@@ -7,7 +7,6 @@ import time
 from sys import byteorder
 import binascii
 import numpy as np
-from extensions.ebsynth_utility.ebsynth_Check import eysynth_check
 
 SYNTHS_PER_PROJECT = 15
 
@@ -272,7 +271,7 @@ def ebsynth_utility_stage5(dbg, project_args, is_invert_mask):
         export_project( project, proj_file_name )
         proj_index += 1
         dbg.print("exported : " + proj_file_name + ".ebs" )
-    eysynth_check(dbg, project_dir)
+    
     dbg.print("")
     dbg.print("completed.")
 
