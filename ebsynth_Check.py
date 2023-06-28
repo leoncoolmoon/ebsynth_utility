@@ -1,5 +1,4 @@
 import os
-import tkinter as tk
 from sys import byteorder
 import struct
 import subprocess
