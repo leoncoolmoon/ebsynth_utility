@@ -117,10 +117,10 @@ def on_ui_tabs():
                                                     Rename keyframes.<br>\
                                                     Generate .ebs file. You need to associate ebs file with ebsynth program (ebsynth project file)<br><br>\
                                                 <b>stage 6</b> <br>\
-                                                    Running ebsynth.(on your self)<br>\
+                                                    Running ebsynth.<br>\
                                                     Open the generated .ebs under project directory and press [Run All] button. <br>\
                                                     If ""out-*"" directory already exists in the Project directory, delete it manually before executing.<br>\
-                                                    If multiple .ebs files are generated, run them all.<br><br>\
+                                                    If multiple .ebs files are generated, run them all. You can redo this step to open the files, it will automatically open any ebs file which not done<br><br>\
                                                 <b>stage 7</b> <br>\
                                                     Concatenate each frame while crossfading.<br>\
                                                     Composite audio files extracted from the original video onto the concatenated video.<br><br>\
