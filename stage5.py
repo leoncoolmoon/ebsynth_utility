@@ -7,6 +7,7 @@ import time
 from sys import byteorder
 import binascii
 import numpy as np
+from extensions.ebsynth_utility.ebsynth_Check import ebsynthCheck
 
 SYNTHS_PER_PROJECT = 15
 
