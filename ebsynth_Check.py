@@ -69,8 +69,7 @@ def eysynth_check(bdg, path):
     #terminate all EbSynth progress
     bdg.print("Terminate all EbSynth progress")
     subprocess.call(["taskkill", "/F", "/IM", "EbSynth.exe"])
-    bdg.print("Open file dialog to choose the project root")
-    # Open file dialog to choose a folder
+    bdg.print("Start to open the ebs files under project root")
     folder_path = path
     
     if os.path.isdir(folder_path):
