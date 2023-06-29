@@ -169,7 +169,7 @@ def ebsynth_utility_process(stage_index: int, project_dir:str, original_movie_pa
         dbg.print("If multiple .ebs files are generated, run them all.")
         dbg.print("(Need to associating the .ebs file with EbSynth.exe.)")
         dbg.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        eysynth_check(dbg, project_dir)
+        ebsynth_check(dbg, project_dir)
         return process_end( dbg, "" )
     elif stage_index == 7:
         ebsynth_utility_stage7(dbg, project_args, blend_rate, export_type, is_invert_mask)
