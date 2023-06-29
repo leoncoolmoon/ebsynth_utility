@@ -12,7 +12,7 @@ from extensions.ebsynth_utility.stage5 import ebsynth_utility_stage5
 from extensions.ebsynth_utility.stage7 import ebsynth_utility_stage7
 from extensions.ebsynth_utility.stage8 import ebsynth_utility_stage8
 from extensions.ebsynth_utility.stage3_5 import ebsynth_utility_stage3_5
-from extensions.ebsynth_utility.ebsynth_Check import eysynth_check
+from extensions.ebsynth_utility.ebsynth_Check import ebsynth_check
 
 def x_ceiling(value, step):
   return -(-value // step) * step
