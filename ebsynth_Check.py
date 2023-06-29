@@ -2,7 +2,7 @@ import os
 from sys import byteorder
 import struct
 import subprocess
-
+import glob
 
 def read_project(proj_filename):
     proj_path = os.path.join(proj_filename + ".ebs")
@@ -64,11 +64,11 @@ def read_project(proj_filename):
         
         return video_path, mask_path, key_path, synth_paths
 
-def eysynth_check(bdg, path):
+def ebsynth_check(dbg, path):
     #terminate all EbSynth progress
-    bdg.print("Terminate all EbSynth progress")
+    dbg.print("Terminate all EbSynth progress")
     subprocess.call(["taskkill", "/F", "/IM", "EbSynth.exe"])
-    bdg.print("Start to open the ebs files under project root")
+    dbg.print("Start to open the ebs files under project root")
     folder_path = path
     
     if os.path.isdir(folder_path):
@@ -77,10 +77,10 @@ def eysynth_check(bdg, path):
             if filename.endswith(".ebs"):
                 file_path = os.path.join(folder_path, filename)
                 video_path, mask_path, key_path, synth_paths = read_project(file_path[:-4]) or ("", "", "", [])
-                bdg.print("check synth_paths:", filename)
+                # dbg.print('checking synth_paths: %s' % filename)
                 # Check if synth_paths is empty
                 if not synth_paths:
-                    bdg.print("Missing synth_paths:", filename," .ebs file corrupt")
+                    dbg.print("Missing synth_paths: " + filename + " .ebs file corrupt")
                 else:
                     for synth in synth_paths:
                         key_frame = synth["key"]
@@ -92,7 +92,7 @@ def eysynth_check(bdg, path):
                         exists = os.path.isdir(synth_folder)
                         file_not_exist = False;
                         if not exists:
-                            bdg.print("Missing Path in ",filename," -> re-open .ebs file")
+                            dbg.print("Missing Path in " + filename + " -> re-open .ebs file")
                             os.startfile(file_path)
                             break
                         else:
@@ -101,12 +101,12 @@ def eysynth_check(bdg, path):
                                 
                                 # Check if png_file exists
                                 if not os.path.exists(png_file):
-                                    bdg.print("Missing png_file:", png_file," -> re-open .ebs file")
+                                    dbg.print("Missing png_file:", png_file," -> re-open .ebs file")
                                     file_not_exist = True
                                     break
                             if file_not_exist:
                                 os.startfile(file_path)
                                 break
-                bdg.print("Passed")
+                dbg.print("Passed")
         
-        bdg.print("done")
+        dbg.print("done")
